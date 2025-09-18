@@ -7,7 +7,26 @@ require("dotenv").config(); // For loading environment variables
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors()); // ✅ enable CORS for all origins
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://interview-proctor-frontend.onrender.com"
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg = `The CORS policy for this site does not allow access from the specified Origin: ${origin}`;
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+    optionsSuccessStatus: 200
+  })
+);
 
 // MongoDB connection
 const mongoURI = process.env.MONGO_URI;

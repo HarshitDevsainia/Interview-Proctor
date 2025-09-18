@@ -754,7 +754,7 @@ export default function ProctoringPanel({ candidateName = "Harshit Soni" }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-700 to-black text-slate-100 p-6 flex flex-col items-center gap-6">
-      <header className="w-full max-w-5xl flex items-center justify-between">
+      <header className="w-full max-w-6xl flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold">
             Tutedude — Interview Proctor
@@ -777,8 +777,10 @@ export default function ProctoringPanel({ candidateName = "Harshit Soni" }) {
           <button
             onClick={() => {
               sendReport();
-              stopRecordingAndDownload();
               endInterview();
+              logRef.current = [];
+              setLogs([]);
+              computeSummary([]);
             }}
             className="px-4 py-2 bg-red-700 hover:bg-red-600 rounded-md text-white"
           >
@@ -793,7 +795,7 @@ export default function ProctoringPanel({ candidateName = "Harshit Soni" }) {
         </div>
       )}
 
-      <main className="w-full max-w-5xl grid grid-cols-2 gap-6">
+      <main className="w-full max-w-6xl grid grid-cols-2 gap-6">
         {/* Video + overlay */}
         <section className="col-span-1 bg-slate-800/60 border border-slate-700 rounded-2xl p-4 shadow-xl">
           <div
@@ -960,6 +962,12 @@ export default function ProctoringPanel({ candidateName = "Harshit Soni" }) {
                 Download Report
               </button>
             </div>
+          </div>
+          <div className="m-4">
+            <p className="text-slate-400 text-sm text-center">
+              Note: We're on Render's free tier, so loading the model may take a
+              little longer. Thanks for your patience!
+            </p>
           </div>
         </aside>
       </main>
