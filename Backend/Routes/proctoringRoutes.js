@@ -5,9 +5,7 @@ const ProctoringReport = require("../models/ProctoringReport");
 // POST /api/proctoring/save-report
 router.post("/save-report", async (req, res) => {
   try {
-    const reportData = req.body;
-    console.log(req.body);
-    
+    const reportData = req.body;    
 
     // Save to MongoDB
     const report = new ProctoringReport(reportData);

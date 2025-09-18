@@ -1,12 +1,36 @@
-# React + Vite
+# 🎥 Proctoring System – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend React application** for the AI-powered online proctoring system.  
+It provides real-time **face, gaze, object, drowsiness, and audio monitoring** along with recording and report generation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 👀 **Face & Gaze Tracking** (using MediaPipe FaceMesh)
+- 📱 **Object Detection** (using TensorFlow COCO-SSD)
+- 😴 **Drowsiness Detection** (EAR - Eye Aspect Ratio)
+- 🎤 **Audio Monitoring** (Web Audio API FFT)
+- 📑 **PDF Report Generation** (jsPDF)
+- 🎥 **Video Recording** (download after session)
+- ⚡ **Real-time Alerts & Scoring**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🏗 Tech Stack
+
+- React + Vite + Tailwind CSS
+- MediaPipe FaceMesh
+- TensorFlow COCO-SSD
+- Web Audio API
+- jsPDF
+
+---
+
+## ⚙️ Installation
+
+```bash
+cd Frontend
+npm install
+npm run dev
+```
