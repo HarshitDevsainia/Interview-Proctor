@@ -24,6 +24,7 @@ const EAR_THRESHOLD = 0.22; // typical EAR threshold (tweak)
 const EYE_CLOSED_SECONDS = 2; // seconds to consider drowsy
 const AUDIO_VOICE_THRESHOLD = 50; // fft avg threshold (tweak)
 const AUDIO_DEBOUNCE_MS = 5000; // don't spam audio logs
+const backendUrl = "https://interview-proctor.onrender.com";
 
 export default function ProctoringPanel({ candidateName = "Harshit Soni" }) {
   const videoRef = useRef(null);
@@ -732,14 +733,11 @@ export default function ProctoringPanel({ candidateName = "Harshit Soni" }) {
     console.log("report: ", report);
 
     try {
-      const res = await fetch(
-        "http://localhost:5000/api/proctoring/save-report",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(report),
-        }
-      );
+      const res = await fetch(`${backendUrl}/api/proctoring/save-report`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(report),
+      });
       const data = await res.json();
       console.log("data", data);
 
