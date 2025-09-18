@@ -23,7 +23,7 @@ It stores **session reports** and provides APIs for managing proctoring logs.
 ## ⚙️ Installation
 
 ```bash
-cd Cackend
+cd Backend
 npm install
 npm run dev
 ```
