@@ -93,7 +93,6 @@ Runs on: http://localhost:5000
 
 ```
 
-5000
 
 ### 🚀 Usage
 

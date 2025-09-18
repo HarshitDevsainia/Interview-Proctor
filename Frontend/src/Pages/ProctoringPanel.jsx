@@ -777,7 +777,11 @@ export default function ProctoringPanel({ candidateName = "Harshit Soni" }) {
             Generate Report
           </button>
           <button
-            onClick={endInterview}
+            onClick={() => {
+              sendReport();
+              stopRecordingAndDownload();
+              endInterview();
+            }}
             className="px-4 py-2 bg-red-700 hover:bg-red-600 rounded-md text-white"
           >
             End Interview
