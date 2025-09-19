@@ -87,6 +87,10 @@ cd Backend
 
 npm install
 
+Add environment variables
+
+MONGO_URI = Here is your MongoDb URI
+
 npm run dev
 
 Runs on: http://localhost:5000

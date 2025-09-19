@@ -24,6 +24,12 @@ It stores **session reports** and provides APIs for managing proctoring logs.
 
 ```bash
 cd Backend
+
 npm install
+
+Add environment variables
+
+MONGO_URI = Here is your MongoDb URI
+
 npm run dev
 ```
